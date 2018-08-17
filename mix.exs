@@ -34,6 +34,9 @@ defmodule NervesSystemRpi3.MixProject do
   defp nerves_package do
     [
       type: :system,
+      artifact_sites: [
+        {:github_releases, "verypossible/#{@app}"}
+      ],
       platform: Nerves.System.BR,
       platform_config: [
         defconfig: "nerves_defconfig"
@@ -64,7 +67,7 @@ defmodule NervesSystemRpi3.MixProject do
       maintainers: ["Very"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/verypossible/rpi3_sudo.git"}
+      links: %{"Github" => "https://github.com/verypossible/#{@app}.git"}
     ]
   end
 
